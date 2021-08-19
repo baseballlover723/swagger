@@ -35,7 +35,9 @@ module Swagger::Objects
         schema = Schema.new(
           type: parameter.type,
           format: parameter.format,
-          default: parameter.default_value
+          default: parameter.default_value,
+          max_length: parameter.max_length,
+          min_length: parameter.min_length
         )
 
         obj << Parameter.new(

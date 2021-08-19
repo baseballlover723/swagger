@@ -24,10 +24,16 @@ module Swagger::Objects
     @[JSON::Field(key: "$ref")]
     getter ref : String? = nil
 
+    @[JSON::Field(key: "maxLength")]
+    getter max_length : (Int32 | Int64)? = nil
+
+    @[JSON::Field(key: "minLength")]
+    getter min_length : (Int32 | Int64)? = nil
+
     def initialize(@type : String? = nil, @format : String? = nil, @required : Array(String)? = nil,
                    @default : (String | Int32 | Int64 | Float64 | Bool)? = nil,
                    @properties : Hash(String, Property)? = nil, @ref : String? = nil,
-                   @items : self? = nil)
+                   @items : self? = nil, @max_length : (Int32 | Int64)? = nil, @min_length : (Int32 | Int64)? = nil)
     end
 
     def ==(other : self)

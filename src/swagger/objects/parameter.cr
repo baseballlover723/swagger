@@ -40,7 +40,7 @@ module Swagger::Objects
 
     def initialize(@name : String, @parameter_location : Location, @schema : Schema,
                    @description : String? = nil, @required = false, @allow_empty_value = false,
-                   @deprecated = false, @ref : String? = nil)
+                   @deprecated = false, @ref : String? = nil, @max_length : (Int32 | Int64)? = nil, @min_length : (Int32 | Int64)? = nil)
       # If the parameter location is "path", this property is REQUIRED and its value MUST be true.
       # Otherwise, the property MAY be included and its default value is false.
       @required = true if @parameter_location.path?
