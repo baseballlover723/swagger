@@ -18,6 +18,7 @@ module Swagger
                    @default_value : (String | Int32 | Int64 | Float64 | Bool)? = nil, @format : String? = nil,
                    @required = false, @allow_empty_value = false, @deprecated = false, @ref : String? = nil,
                    @max_length : (Int32 | Int64)? = nil, @min_length : (Int32 | Int64)? = nil)
+      @min_length = @max_length = nil unless @type == "string"
     end
   end
 end
